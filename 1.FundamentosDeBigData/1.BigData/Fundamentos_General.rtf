@@ -1,0 +1,177 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang3082{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\i\f0\fs40\lang10 Hadoop \b0\i0\fs22\par
+Fundamentos del Big Data\par
+\par
+\'bfQu\'e9 es Big Data?\par
+Big Data se refiere a todas las actividades relacionadas con sistemas que almacenan y manipulan grandes conjuntos de datos, dif\'edciles de procesar con m\'e9todos tradicionales.\par
+\par
+Motivaci\'f3n\par
+Surge debido a la enorme cantidad de informaci\'f3n generada actualmente y los problemas de los sistemas tradicionales para manejar estos datos. Antes, los datos se almacenaban en sistemas centralizados, con problemas de rendimiento y costos elevados para procesar la informaci\'f3n.\par
+\par
+Caracter\'edsticas del Big Data\par
+\par
+Volumen: Grandes cantidades de datos para transformar en valor.\par
+Velocidad: Necesidad de reaccionar r\'e1pidamente para no perder el valor de los datos.\par
+Variedad: Diversos formatos y or\'edgenes de los datos.\par
+Veracidad: Filtrado de datos para asegurar su fiabilidad.\par
+Valor: Transformaci\'f3n de datos en informaci\'f3n relevante y conocimiento.\par
+Ciclo de vida del dato\par
+\par
+Ingesta: Extracci\'f3n de datos sin procesar.\par
+Almacenamiento: Guardar datos en un formato accesible.\par
+Proceso y an\'e1lisis: Transformaci\'f3n de datos en informaci\'f3n procesable.\par
+Explorar y visualizar: Conversi\'f3n de resultados en un formato comprensible y compartible.\par
+Usos\par
+\par
+An\'e1lisis de redes sociales.\par
+Ciencia.\par
+Sector energ\'e9tico.\par
+Mantenimiento predictivo.\par
+Industria y manufactura.\par
+TICs.\par
+Hadoop\par
+Historia\par
+Creado por Doug Cutting, inspirado en documentos de Google para MapReduce y Google File System, se ejecuta en hardware de bajo coste y es tolerante a fallos.\par
+\par
+Concepto\par
+Hadoop es una estructura de software de c\'f3digo abierto para almacenar datos y ejecutar aplicaciones sobre hardware b\'e1sico, con almacenamiento masivo, capacidad de procesamiento y ejecuci\'f3n de tareas concurrentes.\par
+\par
+Caracter\'edsticas\par
+Ventajas:\par
+\par
+Procesamiento distribuido.\par
+Alto rendimiento.\par
+Alta escalabilidad.\par
+Tolerancia a fallos.\par
+Flexibilidad.\par
+Bajo coste.\par
+M\'ednimo tr\'e1fico de red.\par
+Inconvenientes:\par
+\par
+Problemas con archivos peque\'f1os.\par
+Vulnerabilidad.\par
+Bajo rendimiento con datos peque\'f1os.\par
+Falta de seguridad.\par
+Solo procesamiento por lotes.\par
+Tipos de datos\par
+\par
+Estructurados: Datos num\'e9ricos en bases de datos y hojas de c\'e1lculo.\par
+No estructurados: Datos sin estructura interna identificable.\par
+Semiestructurados: Datos con informaci\'f3n asociada como metadatos.\par
+Tiempo de procesado\par
+\par
+Batch: Procesamiento por lotes en conjuntos de datos grandes.\par
+Near Real Time: Procesamiento casi en tiempo real.\par
+Real Time: Procesamiento inmediato.\par
+\par
+\b\i\fs40 HDFS\b0\i0\fs22\par
+Introducci\'f3n\par
+Topolog\'eda de almacenamiento distribuido utilizada en sistemas Big Data basados en Hadoop, lleva el procesamiento a los datos para evitar ineficiencias al mover datos.\par
+\par
+Componentes de HDFS\par
+\par
+Nodo Maestro\par
+NameNode: Gesti\'f3n de metadatos y almacenamiento de permisos y usuarios.\par
+Secondary Namenode: Mantenimiento y checkpoints.\par
+Standby Namenode: Alta disponibilidad y relevo en caso de fallo.\par
+Nodo Esclavo\par
+DataNode: Almacenamiento de bloques de datos.\par
+Escritura y lectura en HDFS\par
+\par
+Escritura: El cliente se conecta con el NameNode, env\'eda datos a los DataNodes y registra la escritura.\par
+Lectura: El cliente solicita la ubicaci\'f3n del fichero al NameNode y lee los datos de los DataNodes.\par
+Fiabilidad y recuperaci\'f3n de datos en HDFS\par
+\par
+Heartbeats cada 3 segundos para indicar el estado.\par
+Recuperaci\'f3n de bloques en caso de fallos.\par
+\b\i\fs40 MapReduce\b0\i0\fs22\par
+Introducci\'f3n\par
+Paradigma de programaci\'f3n para el procesamiento paralelo y distribuido de datos grandes.\par
+\par
+Caracter\'edsticas\par
+\par
+Tolerancia a fallos.\par
+Resiliencia.\par
+Velocidad.\par
+Procesamiento paralelo.\par
+Disponibilidad.\par
+Escalabilidad.\par
+Rentabilidad.\par
+Fases de MapReduce\par
+\par
+Map: Recibe un par clave-valor y devuelve una lista de pares.\par
+Shuffle & Sort: Agrupa y ordena pares clave-valor.\par
+Reduce: Agrega valores a sus claves correspondientes.\par
+Combine (opcional): Optimiza el rendimiento.\par
+Terminolog\'eda\par
+\par
+Cl\'faster: Conjunto de nodos maestros y esclavos.\par
+Nodo: Ordenadores con hardware b\'e1sico (maestros y trabajadores).\par
+Job: Programa completo de Maps y Reduces.\par
+Task: Ejecuci\'f3n de un solo Map o Reduce.\par
+Ejemplo WordCount\par
+Cuenta la frecuencia de palabras en un archivo de texto, produciendo un <k, v> con k=palabra y v=suma de frecuencias.\par
+\par
+\b\i\fs40 YARN\b0\i0\fs22\par
+Introducci\'f3n\par
+Sistema para asignar recursos y programar tareas en un cl\'faster Hadoop, incluido en Hadoop 2.\par
+\par
+Componentes\par
+Resource Manager: Asignaci\'f3n de recursos. (Scheduler (planificador puro) y Aplcation Manager(acepta env\'edos de jobs))\par
+Node Manager: Gesti\'f3n de trabajos y nodos individuales. Se conecta con el Resource Manager y le env\'eda HeartBeats con estado de los nodos\par
+Application Master: Negociaci\'f3n de recursos y gesti\'f3n de tareas. Gesti\'f3n de fallos. Envia tambien HeartBeats al Resource Manager\par
+Container: Conjunto de recursos f\'edsicos dentro de un solo nodo (RAM, CPU, discos...).\par
+Job History Server: (Opcional) Mantenimiento de logs del job.\par
+\par
+Flujo de trabajo\par
+Cliente env\'eda solicitud. Resource Manager asigna contenedor para iniciar el Application Manager, este se conecta al Resorce Manager y solicita contenedores. Application Master notifica al Node Manager que inicie contenedores. Se ejecuta el codigo en el contenedor. Application Master y REsource Manager supervisan estado de aplicacion. Application Manager cancela el registro con Resource Manager.\par
+\par
+\b\i\fs40 Hadoop 3\b0\i0\fs22\par
+Introducci\'f3n\par
+Nueva versi\'f3n con codificaci\'f3n de borrado para tolerancia a fallos, reduciendo la sobrecarga de almacenamiento del 200% al 50%. (Antes hadoop, con HDFS, replicaba los nodos por si fallaban tener una "copia de seguridad")\par
+Hadoop 3 introduce varias mejoras significativas respecto a versiones anteriores, enfoc\'e1ndose en la eficiencia, escalabilidad y flexibilidad en el manejo de grandes vol\'famenes de datos. A continuaci\'f3n, se resumen las principales novedades y cambios:\par
+\par
+Arquitectura\par
+Codificaci\'f3n de Borrado (Erasure Coding)\par
+\par
+Extensi\'f3n del NameNode:\par
+\par
+Los archivos HDFS se dividen en grupos de bloques, con un nuevo protocolo de bloques jer\'e1rquicos que reduce el consumo de memoria del NameNode, administrando grupos de bloques en lugar de bloques individuales.\par
+Extensi\'f3n del Cliente:\par
+\par
+DFSStripedInputStream: Mejora la lectura en paralelo de bloques internos y maneja errores enviando solicitudes de decodificaci\'f3n adicionales.\par
+DFStripedOutputStream: Administra la escritura as\'edncrona de bloques en los DataNodes mediante un coordinador.\par
+Extensi\'f3n del DataNode:\par
+\par
+Un ErasureCodingWorker adicional recupera bloques codificados fallidos. El NameNode detecta errores y selecciona DataNodes para la recuperaci\'f3n, transmitiendo bloques reconstruidos a los nodos destino.\par
+Pol\'edticas de Codificaci\'f3n de Borrado:\par
+\par
+Definen c\'f3mo codificar y decodificar archivos, especificando el n\'famero de bloques de datos y paridad, y el tama\'f1o de las celdas de stripping.\par
+YARN Timeline Service v.2\par
+Resuelve problemas de escalabilidad con una arquitectura distribuida para la escritura y almacenamiento backend escalable utilizando HBase, mejorando tiempos de respuesta para lecturas y escrituras.\par
+Soporte para Contenedores Oportunistas y Programaci\'f3n Distribuida\par
+Contenedores Oportunistas: Baja prioridad, pueden ser preemptados por contenedores garantizados para asegurar espacio para estos \'faltimos.\par
+Soporte de m\'e1s de dos NameNodes\par
+Introduce soporte para m\'faltiples NameNodes, aumentando la tolerancia a fallos y disponibilidad.\par
+Cambios en Puertos Predeterminados\par
+Mejor asignaci\'f3n de puertos para evitar conflictos, ajustando los servicios de NameNode, Secondary NameNode, DataNode y KeyManagementServer.\par
+Gesti\'f3n de Daemon y Task Heap\par
+Nuevas formas de configurar tama\'f1os de heap de demonios, con ajuste autom\'e1tico basado en la memoria del host y sustituci\'f3n de HADOOP_HEAPSIZE por HEAP_MAX_SIZE y HEAP_MIN_SIZE.\par
+Generalizaci\'f3n del Modelo de Recursos de YARN\par
+Incluye recursos definidos por el usuario (como GPUs y almacenamiento local), mejorando el seguimiento de CPU y memoria y permitiendo la integraci\'f3n de contenedores con GPUs.\par
+Consistencia y Almacenamiento en Cach\'e9 de Metadatos para el Cliente S3A\par
+S3GUARD: Utiliza DynamoDB para almacenar en cach\'e9 metadatos de archivos y directorios, mejorando la consistencia y velocidad de las operaciones de listado y escaneo.\par
+Ventajas de Hadoop 3\par
+Soporte EC en l\'ednea: Reducci\'f3n de la sobrecarga de almacenamiento.\par
+Baja sobrecarga: Mejora la eficiencia en el uso de recursos.\par
+Recuperaci\'f3n bidireccional: Mejora la recuperaci\'f3n de datos fallidos.\par
+Compatibilidad: Simplifica las operaciones y mejora la integridad de los datos.\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
